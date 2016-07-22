@@ -22,20 +22,28 @@ Or install it yourself as:
 
     require 'msg91ruby'
     api = Msg91ruby::API.new(auth_key,senderid)
-    api.send(mobileno, message)
+    api.send(mobileno, message, route)
 
 eg: 
 
     require 'msg91ruby'
     api = Msg91ruby::API.new("2552515255255255252","113388")
-    api.send(1234567890, "Test Message")
-    api.send([1234567890,9012345678], "Test Message")
+    api.send(1234567890, "Test Message", 1)
+    api.send([1234567890,9012345678], "Test Message", 1)
+
+you can find your Auth-key here:  http://help.msg91.com/article/177-where-can-i-find-my-authentication-key
 
 ## SMS Settings
 
 You can generate a Yaml file to store the Sms Settings required for your application with following command
 
     rails g msg91ruby:install
+
+## MSG91 Account Details
+
+You can create your account on MSG91 by simply singing up here:  https://msg91.com/signup/msg91ruby
+
+If you are an startup company, you can avail sms credits for your Startup app. For more details visit: https://msg91.com/startups/
 
 
 ## Contributing
